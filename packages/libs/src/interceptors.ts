@@ -34,7 +34,8 @@ export const setupInterceptors = (instance: AxiosInstance): void => {
       console.log(
         `${prefix} API Request:`,
         config.method?.toUpperCase(),
-        config.url
+        config.url,
+        config.headers
       );
       return config;
     },
