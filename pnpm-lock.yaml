@@ -211,6 +211,13 @@ importers:
         version: 5.9.2
 
   packages/utils:
+    dependencies:
+      axios:
+        specifier: ^1.12.2
+        version: 1.12.2
+      next:
+        specifier: 15.5.3
+        version: 15.5.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
