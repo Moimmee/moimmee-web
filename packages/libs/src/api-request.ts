@@ -1,5 +1,5 @@
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { ApiRequestConfig } from './types';
+import { ApiRequestConfig } from './api-request-config';
 
 const isClient = typeof window !== 'undefined';
 

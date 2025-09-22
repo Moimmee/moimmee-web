@@ -1,6 +1,6 @@
 import { ApiRequest } from './api-request';
 import { createAxiosInstance } from './axios-instance';
-import { ApiRequestConfig, AxiosResponse } from './types';
+import { ApiRequestConfig } from './api-request-config';
 
 const axiosInstance = createAxiosInstance();
 
@@ -27,4 +27,3 @@ const apiClient = {
 };
 
 export default apiClient;
-export type { ApiRequestConfig, AxiosResponse };
