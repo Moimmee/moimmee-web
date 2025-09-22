@@ -12,7 +12,9 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "next": "15.5.3",
-    "@repo/ui": "workspace:*"
+    "@repo/ui": "workspace:*",
+    "@repo/libs": "workspace:*",
+    "@repo/utils": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5",
