@@ -3,8 +3,8 @@ import "./style.css"
 
 const Header = () => {
   return (
-    <div className="bg-blue-500 text-white p-4 text-center font-bold">
-      Header
+    <div className="text-primary text-3xl font-bold">
+      Moimmee
     </div>
   )
 }

@@ -5,6 +5,7 @@
   "exports": {
     "./postcss.config.mjs": "./postcss.config.mjs",
     "./style.css" : "./src/style.css",
+    "./fonts/*": "./src/fonts/*",
     "./*": {
       "import": "./src/*.tsx",
       "require": "./src/*.tsx"
