@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
+    "./postcss.config.mjs": "./postcss.config.mjs",
+    "./style.css" : "./src/style.css",
     "./*": {
       "import": "./src/*.tsx",
       "require": "./src/*.tsx"
@@ -19,6 +21,8 @@
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4",
     "eslint": "^9.34.0",
     "typescript": "5.9.2"
   },
