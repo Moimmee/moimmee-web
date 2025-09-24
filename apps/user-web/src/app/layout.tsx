@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import GlobalLayout from "@repo/ui/GlobalLayout";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,9 @@ export default function RootLayout({
       <body
         className="font-pretendard antialiased"
       >
-        {children}
+        <GlobalLayout>
+          {children}
+        </GlobalLayout>
       </body>
     </html>
   );
