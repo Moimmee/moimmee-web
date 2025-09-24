@@ -71,3 +71,15 @@
   --font-pretendard: "Pretendard", ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
 }
+
+@keyframes waterFill {
+  0% {
+    height: 20%;
+  }
+  50% {
+    height: 100%;
+  }
+  100% {
+    height: 20%;
+  }
+}

@@ -1,12 +1,11 @@
-"use client"
-import "./style.css"
+"use client";
 
 const Header = () => {
   return (
-    <div className="text-primary text-3xl font-bold">
-      Moimmee
+    <div className="w-full fixed z-99999 top-0 p-2 bg-white/80 backdrop-blur-sm border-b border-gray-300">
+      <p className="text-2xl font-extrabold text-primary">모이미</p>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

@@ -4,8 +4,9 @@
   "private": true,
   "exports": {
     "./postcss.config.mjs": "./postcss.config.mjs",
-    "./style.css" : "./src/style.css",
+    "./style.css": "./src/style.css",
     "./fonts/*": "./src/fonts/*",
+    "./assets/*": "./src/assets/*",
     "./*": {
       "import": "./src/*.tsx",
       "require": "./src/*.tsx"
@@ -19,15 +20,16 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9.34.0",
+    "tailwindcss": "^4",
     "typescript": "5.9.2"
   },
   "dependencies": {
+    "lucide-react": "^0.544.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }
