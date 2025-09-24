@@ -11,7 +11,8 @@ interface GlobalLayoutProps {
 const GlobalLayout = ({ children }: GlobalLayoutProps) => {
   const [pathname, setPathname] = useState("");
   const [isRouting, setIsRouting] = useState(false);
-  const [animationKey, setAnimationKey] = useState(0);
+  const [safeAreaTop, setSafeAreaTop] = useState(40);
+  const [safeAreaBottom, setSafeAreaBottom] = useState(20);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -29,6 +30,30 @@ const GlobalLayout = ({ children }: GlobalLayoutProps) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const url = new URL(window.location.href);
+      const searchParams = url.searchParams;
+      
+      const topParam = searchParams.get('top');
+      const bottomParam = searchParams.get('bottom');
+      
+      if (topParam) {
+        const topValue = parseInt(topParam, 10);
+        if (!isNaN(topValue) && topValue >= 0) {
+          setSafeAreaTop(topValue);
+        }
+      }
+      
+      if (bottomParam) {
+        const bottomValue = parseInt(bottomParam, 10);
+        if (!isNaN(bottomValue) && bottomValue >= 0) {
+          setSafeAreaBottom(bottomValue);
+        }
+      }
+    }
+  }, [pathname]);
+
   const handleNavigation = (url: string) => {
     setIsRouting(true);
 
@@ -44,12 +69,6 @@ const GlobalLayout = ({ children }: GlobalLayoutProps) => {
   };
 
   useEffect(() => {
-    if (isRouting) {
-      setAnimationKey((prev) => prev + 1);
-    }
-  }, [isRouting]);
-
-  useEffect(() => {
     const timer = setTimeout(() => {
       setIsRouting(false);
     }, 100);
@@ -59,18 +78,13 @@ const GlobalLayout = ({ children }: GlobalLayoutProps) => {
 
   return (
     <>
-      <Header />
+      <Header top={safeAreaTop} />
       {children}
-      <Tabbar handleNavigation={handleNavigation} />
+      <Tabbar bottom={safeAreaBottom} handleNavigation={handleNavigation} />
       {isRouting && (
         <div className="w-screen h-screen bg-black/40 fixed top-0 z-999999 flex items-center justify-center">
-          <div className="relative w-16 h-16 rounded-full border-2 border-[#FF6969]/20 overflow-hidden bg-white shadow-lg">
-            <div 
-              className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[#FF6969] to-[#FF6969]/80 rounded-b-full"
-              style={{
-                animation: 'waterFill 2.5s ease-in-out infinite'
-              }}
-            />
+          <div className="w-16 h-16 rounded-full border-3 border-primary border-t-gray-300 overflow-hidden shadow-lg animate-spin">
+          
           </div>
         </div>
       )}
