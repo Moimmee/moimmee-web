@@ -83,9 +83,7 @@ const GlobalLayout = ({ children }: GlobalLayoutProps) => {
       <Tabbar bottom={safeAreaBottom} handleNavigation={handleNavigation} />
       {isRouting && (
         <div className="w-screen h-screen bg-black/40 fixed top-0 z-999999 flex items-center justify-center">
-          <div className="w-16 h-16 rounded-full border-3 border-primary border-t-gray-300 overflow-hidden shadow-lg animate-spin">
-          
-          </div>
+          <div className="w-16 h-16 rounded-full border-3 border-primary border-t-gray-300 overflow-hidden animate-spin" />
         </div>
       )}
     </>
